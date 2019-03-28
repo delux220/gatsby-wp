@@ -23,7 +23,7 @@ class Pets extends Component {
                         <div className="cbp-item-wrap">
                             <div className="cbp-caption">
                                 <div className="cbp-caption-defaultWrap">
-                                    <img src={post.featured_media.source_url} alt="img3"/> </div>
+                                    <img src={post.acf.featured_image.url} alt="img3"/> </div>
                                 <div className="cbp-caption-activeWrap">
                                     <div className="cbp-l-caption-alignCenter">
                                         <div className="cbp-l-caption-body">
@@ -63,6 +63,11 @@ export const pageQuery = graphql`
             featured_media {
               id
               source_url
+            }
+            acf {
+            	featured_image {
+            		url
+            	}
             }
       
       

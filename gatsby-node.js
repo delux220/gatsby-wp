@@ -36,6 +36,25 @@ exports.createPages = async ({ graphql, actions }) => {
               source_url
             }
             acf {
+              featured_image {
+                wordpress_id
+                title
+                filename
+                filesize
+                url
+                link
+                alt
+                author
+                description
+                caption
+                name
+                status
+                uploaded_to
+                date
+                modified
+                width
+                height
+              } 
             	image_1 {
                 wordpress_id
                 title
