@@ -19,7 +19,7 @@ class Pets extends Component {
   	  <Row>
   	  	{posts.edges.map(function(edge) {
   	  		var post = edge.node;
-  	  		return (<Col md={4}><div className="cbp-item movie"><div className="cbp-item-wrapper">
+  	  		return (<Col md={4}><div className="cbp-item movie" style={{position:'relative'}}><div className="cbp-item-wrapper">
                         <div className="cbp-item-wrap">
                             <div className="cbp-caption">
                                 <div className="cbp-caption-defaultWrap">
@@ -36,7 +36,7 @@ class Pets extends Component {
                                 </div>
                             </div>
                             <div className="cbp-l-grid-projects-title uppercase text-center uppercase text-center">{post.title}</div>
-                            <div className="cbp-l-grid-projects-desc uppercase text-center uppercase text-center"></div>
+                            <div className="cbp-l-grid-projects-desc uppercase text-center uppercase text-center">Pets</div>
                         </div>
                     </div></div></Col>);
   	  	})}</Row>
