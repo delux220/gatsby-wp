@@ -64,7 +64,7 @@ class PostTemplate extends Component {
 <div className="cbp-popup-content-wrap"><div className="cbp-popup-content"><div className="portfolio-content">
    
     <div className="cbp-l-project-title">{post.title}</div>
-    <div className="cbp-l-project-subtitle">by Dave</div>
+    <div className="cbp-l-project-subtitle">{post.acf.tagline}</div>
     <Slider {...settings} >
         {post.acf.image_1&&<div>
             <img src={post.acf.image_1.url} style={{maxWidth:'100%'}}/>
@@ -136,6 +136,7 @@ export const pageQuery = graphql`
       image_3 {
         url
       }
+      tagline
     }
       
     }

@@ -23,7 +23,17 @@ exports.createPages = async ({ graphql, actions }) => {
   // from the fetched data that you can run queries against.
   const result = await graphql(`
     {
-     
+     allWordpressPage {
+      edges {
+        node {
+          id
+          slug
+          acf {
+            tagline
+          }
+        }
+      }
+     }
     
     allWordpressWpInterests {
         edges {
@@ -112,6 +122,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 width
                 height
               } 
+              tagline
             }
             title
             status
@@ -129,9 +140,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Access query results via object destructuring
   //const { allWordpressPage, allWordpressPost, allWordpressWpInterests } = result.data
-  const { allWordpressWpInterests } = result.data
+  const { allWordpressPage, allWordpressWpInterests } = result.data
 
-  /*const pageTemplate = path.resolve(`./src/templates/post.js`)
+const pageTemplate = path.resolve(`./src/templates/page.js`)
   // We want to create a detailed page for each
   // page node. We'll just use the WordPress Slug for the slug.
   // The Page ID is prefixed with 'PAGE_'
@@ -140,6 +151,7 @@ exports.createPages = async ({ graphql, actions }) => {
     // Gatsby uses Redux to manage its internal state.
     // Plugins and sites can use functions like "createPage"
     // to interact with Gatsby.
+    console.log(edge.node.id);
     createPage({
       // Each page is required to have a `path` as well
       // as a template component. The `context` is
@@ -157,7 +169,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // We want to create a detailed page for each
   // post node. We'll just use the WordPress Slug for the slug.
   // The Post ID is prefixed with 'POST_'
-  allWordpressPost.edges.forEach(edge => {
+ /* allWordpressPost.edges.forEach(edge => {
   	console.log(edge); 
     createPage({
       path: `/${edge.node.slug}/`,
@@ -170,7 +182,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const postTemplate = path.resolve(`./src/templates/post.js`)
 
   allWordpressWpInterests.edges.forEach(edge => {
-  	console.log(edge); 
+
     createPage({
       path: `/${edge.node.slug}/`,
       component: slash(postTemplate),

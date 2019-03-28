@@ -34,17 +34,15 @@ const Layout = ({ children }) => (
                 </div>
                 <div id="menu-links">
 
-                    <Link to="/bagel" className="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Bagel</Link>
-                    <Link to="/vivariums" className="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Vivariums</Link>
+                    <Link to={'/about-dave'} className="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">About Dave</Link>
+                    <Link to="/pets" className="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Meet the Pets</Link>
 
                 </div>
                 <div className="list-group-item">
                     <address>
                         Queens, NY 11375<br/>
-                        <a href="#map" data-toggle="modal"><i className="fa fa-map-o" aria-hidden="true"></i></a>
                     </address>
                     <address>
-                        <strong>Your Name</strong><br/>
                         <a href="mailto:dave.luke@gmail.com">dave.luke@gmail.com</a>
                     </address>
                 </div>
@@ -52,17 +50,9 @@ const Layout = ({ children }) => (
           </div>
 
         </div>
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
+          <div className="container-fluid" style={{maxWidth:'1400px'}}>
           {children}
-         
-        </div>
+         </div>
       </>
     )}
   />
