@@ -17,7 +17,8 @@ class Pets extends Component {
   	  <div id="js-grid-juicy-projects" className="cbp cbp-caption-active cbp-caption-overlayBottomReveal cbp-ready">
   	  <div>
   	  <div className="row">
-  	  	{posts.edges.map(function(edge) {
+  	  	{posts.edges.map(function(edge ) {
+  	  		
   	  		var post = edge.node;
   	  		return (<div className="col-md-3"><div className="cbp-item movie" style={{position:'relative'}}><div className="cbp-item-wrapper">
                         <div className="cbp-item-wrap">

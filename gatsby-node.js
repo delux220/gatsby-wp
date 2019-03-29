@@ -181,16 +181,32 @@ const pageTemplate = path.resolve(`./src/templates/page.js`)
   })*/
   const postTemplate = path.resolve(`./src/templates/post.js`)
 
-  allWordpressWpInterests.edges.forEach(edge => {
+  allWordpressWpInterests.edges.forEach((edge, i) => {
 
+    var next = '';
+    var prev = '';
+    if ((i+1) >= allWordpressWpInterests.edges.length) {
+      next = allWordpressWpInterests.edges[0].node.slug;
+    } else {
+      next = allWordpressWpInterests.edges[i+1].node.slug;
+    }
+
+    if ((i-1) <= 0) {
+      prev = allWordpressWpInterests.edges[allWordpressWpInterests.edges.length-1].node.slug;
+    } else {
+      prev = allWordpressWpInterests.edges[i-1].node.slug;
+    }
     createPage({
       path: `/${edge.node.slug}/`,
       component: slash(postTemplate),
       title: edge.node.title,
       content: edge.node.content,
+      
       featured_media: edge.node.featured_media,
       context: {
         id: edge.node.id,
+        prev: prev,
+      next: next
       },
     })
   })
