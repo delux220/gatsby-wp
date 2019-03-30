@@ -20,7 +20,7 @@ class Pets extends Component {
   	  	{posts.edges.map(function(edge ) {
   	  		
   	  		var post = edge.node;
-  	  		return (<div className="col-md-3"><div className="cbp-item movie" style={{position:'relative'}}><div className="cbp-item-wrapper">
+  	  		return (<div className="col-md-3"><div className="cbp-item movie animated fadeIn" style={{position:'relative'}}><div className="cbp-item-wrapper">
                         <div className="cbp-item-wrap">
                             <div className="cbp-caption">
                                 <div className="cbp-caption-defaultWrap">
