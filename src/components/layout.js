@@ -31,7 +31,7 @@ const Layout = ({ children }) => (
           <div className="d-none d-md-block menu">
             <div className="list-group cbp-l-filters-button js-filters-juicy-projects">
                 <div data-filter="*" className="cbp-filter-item list-group-item logo">
-                    <h3>Dave Luke</h3>
+                    <Link to={'/'}><img src="//res.cloudinary.com/meshed-nyc/w_520,c_fill/logo_ybsyp0.png" style={{maxWidth:'100%'}}/></Link>
                 </div>
                 <div id="menu-links">
 

@@ -116,7 +116,7 @@ class PostTemplate extends Component {
 
     return (
       <Layout>
-      <div className="animated slideInRight cbp-popup-wrap cbp-popup-singlePage cbp-popup-singlePage-open cbp-popup-transitionend cbp-popup-ready" style={{display:'block'}}>
+      <div className="animated slideInRight faster cbp-popup-wrap cbp-popup-singlePage cbp-popup-singlePage-open cbp-popup-transitionend cbp-popup-ready" style={{display:'block'}}>
 <div className="cbp-popup-content-wrap"><div className="cbp-popup-content"><div className="portfolio-content">
    
     <div className="cbp-l-project-title">{post.title}</div>

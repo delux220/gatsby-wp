@@ -36,7 +36,7 @@ class PageTemplate extends Component {
 
     return (
       <Layout>
-      <div className="cbp-popup-wrap cbp-popup-singlePage cbp-popup-singlePage-open cbp-popup-transitionend cbp-popup-ready slideInRight animated" style={{display:'block'}}>
+      <div className="cbp-popup-wrap cbp-popup-singlePage cbp-popup-singlePage-open cbp-popup-transitionend cbp-popup-ready slideInRight faster animated" style={{display:'block'}}>
 <div className="cbp-popup-content-wrap"><div className="cbp-popup-content"><div className="portfolio-content">
    
     <div className="cbp-l-project-title">{page.title}</div>

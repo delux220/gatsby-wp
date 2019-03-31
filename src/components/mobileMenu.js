@@ -18,8 +18,8 @@ render() {
                 <nav className="navbar navbar-light">
                   <div className="container-fluid">
                     <div id="BtnMobilMenu" className="text-center">
-                    <h3 style={{display:'inline-block'}}>Dave Luke</h3>
-                        <button type="button" className="navbar-toggler" onClick={this.toggleMenu}>
+                    <Link to={'/'}><img src="//res.cloudinary.com/meshed-nyc/w_520,c_fill/logo_ybsyp0.png" style={{maxWidth:'200px', display:'inline-block', marginTop:'-10px'}}/></Link>
+                        <button type="button" className="navbar-toggler" onClick={this.toggleMenu} style={{border:'0px'}}>
                         <span className="navbar-toggler-icon"></span>
                       </button>
                     </div>

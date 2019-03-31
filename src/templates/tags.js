@@ -51,6 +51,8 @@ class Tags extends Component {
             if (edge.node.tags[i].slug == this.state.tag) {
               cssClass = 'fadeIn';
               break;
+            } else {
+              return false;
             }
           }
 
