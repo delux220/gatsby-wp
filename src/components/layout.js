@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql, Link } from "gatsby"
+import MobileMenu from './mobileMenu';
 
 import Header from "./header"
 
@@ -35,7 +36,8 @@ const Layout = ({ children }) => (
                 <div id="menu-links">
 
                     <Link to={'/about-dave'} className="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">About Dave</Link>
-                    <Link to="/pets" className="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Meet the Pets</Link>
+                    <Link to="/interests/pets" className="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Meet the Pets</Link>
+                    <Link to="/interests/interests" className="cbp-singlePage list-group-item hvr-underline-from-left text-uppercase">Interests</Link>
 
                 </div>
                 <div className="list-group-item">
@@ -48,6 +50,7 @@ const Layout = ({ children }) => (
                 </div>
             </div>
           </div>
+          <MobileMenu/>
 
         </div>
           <div className="container-fluid" style={{maxWidth:'1400px'}}>

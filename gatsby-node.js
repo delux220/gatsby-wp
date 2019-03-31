@@ -34,6 +34,15 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
      }
+     allWordpressTag {
+      edges {
+        node {
+          id,
+          slug
+          name
+        }
+      }
+    }
     
     allWordpressWpInterests {
         edges {
@@ -44,6 +53,10 @@ exports.createPages = async ({ graphql, actions }) => {
             featured_media {
               id
               source_url
+            }
+            tags {
+              slug
+              name
             }
             acf {
               featured_image {
@@ -140,7 +153,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Access query results via object destructuring
   //const { allWordpressPage, allWordpressPost, allWordpressWpInterests } = result.data
-  const { allWordpressPage, allWordpressWpInterests } = result.data
+  const { allWordpressPage, allWordpressTag, allWordpressWpInterests } = result.data
 
 const pageTemplate = path.resolve(`./src/templates/page.js`)
   // We want to create a detailed page for each
@@ -151,7 +164,6 @@ const pageTemplate = path.resolve(`./src/templates/page.js`)
     // Gatsby uses Redux to manage its internal state.
     // Plugins and sites can use functions like "createPage"
     // to interact with Gatsby.
-    console.log(edge.node.id);
     createPage({
       // Each page is required to have a `path` as well
       // as a template component. The `context` is
@@ -179,6 +191,23 @@ const pageTemplate = path.resolve(`./src/templates/page.js`)
       },
     })
   })*/
+  const tagTemplate = path.resolve(`./src/templates/tags.js`)
+
+  allWordpressTag.edges.forEach(edge => {
+    createPage({
+        // Each page is required to have a `path` as well
+        // as a template component. The `context` is
+        // optional but is often necessary so the template
+        // can query data specific to each page.
+        path: `/interests/${edge.node.slug}/`,
+        component: slash(tagTemplate),
+        context: {
+          id: edge.node.id,
+          slug: edge.node.slug
+        },
+      })
+    })
+
   const postTemplate = path.resolve(`./src/templates/post.js`)
 
   allWordpressWpInterests.edges.forEach((edge, i) => {
