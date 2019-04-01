@@ -38,7 +38,7 @@ class PageTemplate extends Component {
       <Layout>
       <div className="cbp-popup-wrap cbp-popup-singlePage cbp-popup-singlePage-open cbp-popup-transitionend cbp-popup-ready slideInRight faster animated" style={{display:'block'}}>
 <div className="cbp-popup-content-wrap"><div className="cbp-popup-content"><div className="portfolio-content">
-   
+    {page.acf.image&&<img src={page.acf.image.url} style={{width:'300px', borderRadius:'50%', margin:'24px auto 48px', display:'block'}}/>}
     <div className="cbp-l-project-title">{page.title}</div>
     <div class="cbp-l-project-subtitle">{page.acf.tagline}</div>
 
@@ -72,7 +72,7 @@ class PageTemplate extends Component {
             </div>
             </div>
       </Layout>
-    )
+    ) 
   }
 }
 
@@ -92,6 +92,9 @@ export const pageQuery = graphql`
       date(formatString: "MMMM DD, YYYY")
       acf {
         tagline
+        image {
+          url
+        }
       }
     }
     

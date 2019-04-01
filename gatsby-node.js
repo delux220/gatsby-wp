@@ -30,6 +30,9 @@ exports.createPages = async ({ graphql, actions }) => {
           slug
           acf {
             tagline
+            image {
+              url
+            }
           }
         }
       }
